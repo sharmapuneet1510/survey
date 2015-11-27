@@ -1,0 +1,5 @@
+User Story Number 01 -- MultiTenancy
+01)	User Should be able to login as a individual User or as company
+02)	Individual User
+02.01)	Individual User be able to register where a dummy company will be created per user.
+02.02)	
