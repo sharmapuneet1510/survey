@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+.img-circle {
+	border-radius: 50%;
+}
+
+.grid {
+	width: 500px;
+	height: 250px;
+}
