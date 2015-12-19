@@ -1,5 +1,15 @@
 User Story Number 01 -- MultiTenancy
 01)	User Should be able to login as a individual User or as company
 02)	Individual User
-02.01)	Individual User be able to register where a dummy company will be created per user.
+02.01) Individual User be able to register where a dummy company will be created per user.
 02.02)	
+
+
+User Story Number 02 -- Generic Excel
+01) As soon as user logins, he gets an excel to create survey. As he fills his data and submits excel, he gets an option to either preview the survey or submit it directly.
+02) If user selects option to preview:
+02.01) He can view his created survey and if he wants to make changes then he can select option to edit and he will be directed to excel again to change his data.
+02.02) Once done, he gets option again to preview data or save data.
+03) If user selects option to submit:
+03.01) His survey gets directly submitted.
+
