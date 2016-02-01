@@ -23,7 +23,7 @@ public class UserController
 					{
 						User user = new User();
 						user.setId(UUID.randomUUID().toString());
-						user.setUserId("userId_" + UUID.randomUUID());
+						//user.setUserId("userId_" + UUID.randomUUID());
 						user.setEmailAddress(System.currentTimeMillis() + "@gmail.com");
 						if ((i % 2) == 0)
 							{
@@ -38,18 +38,18 @@ public class UserController
 					}
 				return users;
 			}
-			
+
 		@ResponseBody
 		@RequestMapping(value = "/getUser", method = RequestMethod.GET, consumes = { "application/json" }, produces = { "application/json" })
 		public User getUser()
 			{
 				User user = new User();
 				user.setId(UUID.randomUUID().toString());
-				user.setUserId("userId_" + UUID.randomUUID());
+				//user.setUserId("userId_" + UUID.randomUUID());
 				user.setEmailAddress(System.currentTimeMillis() + "@gmail.com");
 				user.setProfilePic("http://localhost:8080/surveySystem/pg/images/male.png");
 				user.setPassword("**********");
 				return user;
 			}
-			
+
 	}

@@ -2,3 +2,5 @@ http://websystique.com/springmvc/spring-mvc-4-angularjs-example/
 http://websystique.com/angularjs/angularjs-http-service-example-server-communication/
 https://docs.angularjs.org/guide/forms
 http://plnkr.co/edit/?p=preview
+http://www.w3schools.com/angular/tryit.asp?filename=try_ng_myusers
+https://scotch.io/tutorials/submitting-ajax-forms-the-angularjs-way

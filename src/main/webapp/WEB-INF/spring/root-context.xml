@@ -8,8 +8,18 @@
   <!-- Root Context: defines shared resources visible to all other web components -->
   <import resource="classpath:META-INF/cxf/cxf.xml" />
   <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+  <context:annotation-config />
+  <context:component-scan base-package="com.grandviewtech.surveysystem" />
+  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="location">
+      <value>classpath:application.properties</value>
+    </property>
+  </bean>
+  <mongo:repositories base-package="com.grandviewtech.surveysystem.service.dao" />
   <bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
-  <bean id="userWebService" class="com.grandviewtech.surveysystem.webservice.UserWebService" />
+  <bean id="userWebService" class="com.grandviewtech.surveysystem.service.web.UserWebService">
+  </bean>
+  <bean id="authenticationService" class="com.grandviewtech.surveysystem.service.web.AuthenticationService" />
   <!-- END -->
   <!-- WebSocket Configuration -->
   <!-- START -->
@@ -18,13 +28,15 @@
   <jaxrs:server id="surveySystemWebService" address="/rest/">
     <jaxrs:serviceBeans>
       <ref bean="userWebService" />
+      <ref bean="authenticationService" />
     </jaxrs:serviceBeans>
     <jaxrs:providers>
       <ref bean="jsonProvider" />
     </jaxrs:providers>
     <jaxrs:properties>
-      <entry key="attachment-memory-threshold" value="404800" />
-      <entry key="attachment-max-size" value="404800" />
+      <entry key="attachment-directory" value="${attachment-directory}" />
+      <entry key="attachment-memory-threshold" value="${attachment-memory-threshold}" />
+      <entry key="attachment-max-size" value="${attachment-max-size}" />
     </jaxrs:properties>
     <jaxrs:inInterceptors>
     </jaxrs:inInterceptors>

@@ -27,9 +27,10 @@ public class Field implements Serializable
 		private FieldType			fieldType;
 
 		private FieldProperties		fieldProperties;
-									
+
 		/**
 		 * <br>
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:47 pm <br>
@@ -41,23 +42,26 @@ public class Field implements Serializable
 			{
 				return metaData;
 			}
-			
+
 		/**
 		 * <br>
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:47 pm <br>
 		 * @methodName : setMetaData <br>
 		 * @Description : <br>
-		 * @param metaData the metaData to set
+		 * @param metaData
+		 *            the metaData to set
 		 */
 		public void setMetaData(MetaData metaData)
 			{
 				this.metaData = metaData;
 			}
-			
+
 		/**
 		 * <br>
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:47 pm <br>
@@ -69,23 +73,26 @@ public class Field implements Serializable
 			{
 				return fieldUniqueName;
 			}
-			
+
 		/**
 		 * <br>
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:47 pm <br>
 		 * @methodName : setFieldUniqueName <br>
 		 * @Description : <br>
-		 * @param fieldUniqueName the fieldUniqueName to set
+		 * @param fieldUniqueName
+		 *            the fieldUniqueName to set
 		 */
 		public void setFieldUniqueName(String fieldUniqueName)
 			{
 				this.fieldUniqueName = fieldUniqueName;
 			}
-			
+
 		/**
 		 * <br>
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:47 pm <br>
@@ -97,23 +104,26 @@ public class Field implements Serializable
 			{
 				return fieldType;
 			}
-			
+
 		/**
 		 * <br>
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:47 pm <br>
 		 * @methodName : setFieldType <br>
 		 * @Description : <br>
-		 * @param fieldType the fieldType to set
+		 * @param fieldType
+		 *            the fieldType to set
 		 */
 		public void setFieldType(FieldType fieldType)
 			{
 				this.fieldType = fieldType;
 			}
-			
+
 		/**
 		 * <br>
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:47 pm <br>
@@ -125,23 +135,26 @@ public class Field implements Serializable
 			{
 				return fieldProperties;
 			}
-			
+
 		/**
 		 * <br>
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:47 pm <br>
 		 * @methodName : setFieldProperties <br>
 		 * @Description : <br>
-		 * @param fieldProperties the fieldProperties to set
+		 * @param fieldProperties
+		 *            the fieldProperties to set
 		 */
 		public void setFieldProperties(FieldProperties fieldProperties)
 			{
 				this.fieldProperties = fieldProperties;
 			}
-			
+
 		/**
 		 * <br>
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:47 pm <br>
@@ -153,5 +166,5 @@ public class Field implements Serializable
 			{
 				return serialVersionUID;
 			}
-			
+
 	}

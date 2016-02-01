@@ -20,10 +20,12 @@ public class MetaData implements Serializable
 		private String				userId;
 		private Date				lastModifiedDate;
 		private Date				createdDate;
+		private String				createdBy;
+		private String				modifiedBy;
 
 		/**
 		 * <br>
-		 * 
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:06 pm <br>
@@ -38,7 +40,7 @@ public class MetaData implements Serializable
 
 		/**
 		 * <br>
-		 * 
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:06 pm <br>
@@ -54,7 +56,7 @@ public class MetaData implements Serializable
 
 		/**
 		 * <br>
-		 * 
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:06 pm <br>
@@ -69,7 +71,7 @@ public class MetaData implements Serializable
 
 		/**
 		 * <br>
-		 * 
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:06 pm <br>
@@ -85,7 +87,7 @@ public class MetaData implements Serializable
 
 		/**
 		 * <br>
-		 * 
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:06 pm <br>
@@ -100,7 +102,7 @@ public class MetaData implements Serializable
 
 		/**
 		 * <br>
-		 * 
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:06 pm <br>
@@ -116,7 +118,7 @@ public class MetaData implements Serializable
 
 		/**
 		 * <br>
-		 * 
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:06 pm <br>
@@ -131,7 +133,7 @@ public class MetaData implements Serializable
 
 		/**
 		 * <br>
-		 * 
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:06 pm <br>
@@ -147,7 +149,7 @@ public class MetaData implements Serializable
 
 		/**
 		 * <br>
-		 * 
+		 *
 		 * @Author : puneetsharma <br>
 		 * @createdDate : 26-Nov-2015 <br>
 		 * @createdTime : 12:31:06 pm <br>
@@ -158,6 +160,68 @@ public class MetaData implements Serializable
 		public static long getSerialversionuid()
 			{
 				return serialVersionUID;
+			}
+
+		/**
+		 * <br>
+		 * 
+		 * @Author : puneetsharma <br>
+		 * @createdDate : 17-Dec-2015 <br>
+		 * @createdTime : 10:40:19 pm <br>
+		 * @methodName : getCreatedBy <br>
+		 * @Description : <br>
+		 * @return the createdBy
+		 */
+		public String getCreatedBy()
+			{
+				return createdBy;
+			}
+
+		/**
+		 * <br>
+		 * 
+		 * @Author : puneetsharma <br>
+		 * @createdDate : 17-Dec-2015 <br>
+		 * @createdTime : 10:40:19 pm <br>
+		 * @methodName : setCreatedBy <br>
+		 * @Description : <br>
+		 * @param createdBy
+		 *            the createdBy to set
+		 */
+		public void setCreatedBy(String createdBy)
+			{
+				this.createdBy = createdBy;
+			}
+
+		/**
+		 * <br>
+		 * 
+		 * @Author : puneetsharma <br>
+		 * @createdDate : 17-Dec-2015 <br>
+		 * @createdTime : 10:40:19 pm <br>
+		 * @methodName : getModifiedBy <br>
+		 * @Description : <br>
+		 * @return the modifiedBy
+		 */
+		public String getModifiedBy()
+			{
+				return modifiedBy;
+			}
+
+		/**
+		 * <br>
+		 * 
+		 * @Author : puneetsharma <br>
+		 * @createdDate : 17-Dec-2015 <br>
+		 * @createdTime : 10:40:19 pm <br>
+		 * @methodName : setModifiedBy <br>
+		 * @Description : <br>
+		 * @param modifiedBy
+		 *            the modifiedBy to set
+		 */
+		public void setModifiedBy(String modifiedBy)
+			{
+				this.modifiedBy = modifiedBy;
 			}
 
 	}

@@ -4,27 +4,35 @@ import java.io.Serializable;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Document(collection = "user")
 @XmlRootElement
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements Serializable
 	{
-		
+
 		private static final long	serialVersionUID	= -5670860671364444820L;
-														
+
+		@Id
 		private String				id;
 		private String				userId;
 		private String				emailAddress;
 		private String				password;
+		private String				firstName;
+		private String				middleName;
+		private String				lastName;
 		private String				profilePic;
-									
+
 		/**
 		 * <br>
 		 *
 		 * @Author : puneetsharma <br>
-		 * @createdDate : 30-Nov-2015 <br>
-		 * @createdTime : 6:34:24 pm <br>
+		 * @createdDate : 14-Jan-2016 <br>
+		 * @createdTime : 12:04:54 pm <br>
 		 * @methodName : getId <br>
 		 * @Description : <br>
 		 * @return the id
@@ -33,13 +41,13 @@ public class User implements Serializable
 			{
 				return id;
 			}
-			
+
 		/**
 		 * <br>
 		 *
 		 * @Author : puneetsharma <br>
-		 * @createdDate : 30-Nov-2015 <br>
-		 * @createdTime : 6:34:24 pm <br>
+		 * @createdDate : 14-Jan-2016 <br>
+		 * @createdTime : 12:04:54 pm <br>
 		 * @methodName : setId <br>
 		 * @Description : <br>
 		 * @param id
@@ -49,44 +57,13 @@ public class User implements Serializable
 			{
 				this.id = id;
 			}
-			
+
 		/**
 		 * <br>
 		 *
 		 * @Author : puneetsharma <br>
-		 * @createdDate : 30-Nov-2015 <br>
-		 * @createdTime : 6:34:24 pm <br>
-		 * @methodName : getUserId <br>
-		 * @Description : <br>
-		 * @return the userId
-		 */
-		public String getUserId()
-			{
-				return userId;
-			}
-			
-		/**
-		 * <br>
-		 *
-		 * @Author : puneetsharma <br>
-		 * @createdDate : 30-Nov-2015 <br>
-		 * @createdTime : 6:34:24 pm <br>
-		 * @methodName : setUserId <br>
-		 * @Description : <br>
-		 * @param userId
-		 *            the userId to set
-		 */
-		public void setUserId(String userId)
-			{
-				this.userId = userId;
-			}
-			
-		/**
-		 * <br>
-		 *
-		 * @Author : puneetsharma <br>
-		 * @createdDate : 30-Nov-2015 <br>
-		 * @createdTime : 6:34:24 pm <br>
+		 * @createdDate : 14-Jan-2016 <br>
+		 * @createdTime : 12:04:54 pm <br>
 		 * @methodName : getEmailAddress <br>
 		 * @Description : <br>
 		 * @return the emailAddress
@@ -95,13 +72,13 @@ public class User implements Serializable
 			{
 				return emailAddress;
 			}
-			
+
 		/**
 		 * <br>
 		 *
 		 * @Author : puneetsharma <br>
-		 * @createdDate : 30-Nov-2015 <br>
-		 * @createdTime : 6:34:24 pm <br>
+		 * @createdDate : 14-Jan-2016 <br>
+		 * @createdTime : 12:04:54 pm <br>
 		 * @methodName : setEmailAddress <br>
 		 * @Description : <br>
 		 * @param emailAddress
@@ -111,13 +88,13 @@ public class User implements Serializable
 			{
 				this.emailAddress = emailAddress;
 			}
-			
+
 		/**
 		 * <br>
 		 *
 		 * @Author : puneetsharma <br>
-		 * @createdDate : 30-Nov-2015 <br>
-		 * @createdTime : 6:34:24 pm <br>
+		 * @createdDate : 14-Jan-2016 <br>
+		 * @createdTime : 12:04:54 pm <br>
 		 * @methodName : getPassword <br>
 		 * @Description : <br>
 		 * @return the password
@@ -126,13 +103,13 @@ public class User implements Serializable
 			{
 				return password;
 			}
-			
+
 		/**
 		 * <br>
 		 *
 		 * @Author : puneetsharma <br>
-		 * @createdDate : 30-Nov-2015 <br>
-		 * @createdTime : 6:34:24 pm <br>
+		 * @createdDate : 14-Jan-2016 <br>
+		 * @createdTime : 12:04:54 pm <br>
 		 * @methodName : setPassword <br>
 		 * @Description : <br>
 		 * @param password
@@ -142,13 +119,106 @@ public class User implements Serializable
 			{
 				this.password = password;
 			}
-			
+
 		/**
 		 * <br>
 		 *
 		 * @Author : puneetsharma <br>
-		 * @createdDate : 30-Nov-2015 <br>
-		 * @createdTime : 6:34:24 pm <br>
+		 * @createdDate : 14-Jan-2016 <br>
+		 * @createdTime : 12:04:54 pm <br>
+		 * @methodName : getFirstName <br>
+		 * @Description : <br>
+		 * @return the firstName
+		 */
+		public String getFirstName()
+			{
+				return firstName;
+			}
+
+		/**
+		 * <br>
+		 *
+		 * @Author : puneetsharma <br>
+		 * @createdDate : 14-Jan-2016 <br>
+		 * @createdTime : 12:04:54 pm <br>
+		 * @methodName : setFirstName <br>
+		 * @Description : <br>
+		 * @param firstName
+		 *            the firstName to set
+		 */
+		public void setFirstName(String firstName)
+			{
+				this.firstName = firstName;
+			}
+
+		/**
+		 * <br>
+		 *
+		 * @Author : puneetsharma <br>
+		 * @createdDate : 14-Jan-2016 <br>
+		 * @createdTime : 12:04:54 pm <br>
+		 * @methodName : getMiddleName <br>
+		 * @Description : <br>
+		 * @return the middleName
+		 */
+		public String getMiddleName()
+			{
+				return middleName;
+			}
+
+		/**
+		 * <br>
+		 *
+		 * @Author : puneetsharma <br>
+		 * @createdDate : 14-Jan-2016 <br>
+		 * @createdTime : 12:04:54 pm <br>
+		 * @methodName : setMiddleName <br>
+		 * @Description : <br>
+		 * @param middleName
+		 *            the middleName to set
+		 */
+		public void setMiddleName(String middleName)
+			{
+				this.middleName = middleName;
+			}
+
+		/**
+		 * <br>
+		 *
+		 * @Author : puneetsharma <br>
+		 * @createdDate : 14-Jan-2016 <br>
+		 * @createdTime : 12:04:54 pm <br>
+		 * @methodName : getLastName <br>
+		 * @Description : <br>
+		 * @return the lastName
+		 */
+		public String getLastName()
+			{
+				return lastName;
+			}
+
+		/**
+		 * <br>
+		 *
+		 * @Author : puneetsharma <br>
+		 * @createdDate : 14-Jan-2016 <br>
+		 * @createdTime : 12:04:54 pm <br>
+		 * @methodName : setLastName <br>
+		 * @Description : <br>
+		 * @param lastName
+		 *            the lastName to set
+		 */
+		public void setLastName(String lastName)
+			{
+				this.lastName = lastName;
+			}
+
+		/**
+		 * <br>
+		 *
+		 * @Author : puneetsharma <br>
+		 * @createdDate : 14-Jan-2016 <br>
+		 * @createdTime : 12:04:54 pm <br>
 		 * @methodName : getProfilePic <br>
 		 * @Description : <br>
 		 * @return the profilePic
@@ -157,13 +227,13 @@ public class User implements Serializable
 			{
 				return profilePic;
 			}
-			
+
 		/**
 		 * <br>
 		 *
 		 * @Author : puneetsharma <br>
-		 * @createdDate : 30-Nov-2015 <br>
-		 * @createdTime : 6:34:24 pm <br>
+		 * @createdDate : 14-Jan-2016 <br>
+		 * @createdTime : 12:04:54 pm <br>
 		 * @methodName : setProfilePic <br>
 		 * @Description : <br>
 		 * @param profilePic
@@ -173,5 +243,36 @@ public class User implements Serializable
 			{
 				this.profilePic = profilePic;
 			}
-			
+
+		/**
+		 * <br>
+		 *
+		 * @Author : puneetsharma <br>
+		 * @createdDate : 26-Jan-2016 <br>
+		 * @createdTime : 10:49:03 pm <br>
+		 * @methodName : getUserId <br>
+		 * @Description : <br>
+		 * @return the userId
+		 */
+		public String getUserId()
+			{
+				return userId;
+			}
+
+		/**
+		 * <br>
+		 *
+		 * @Author : puneetsharma <br>
+		 * @createdDate : 26-Jan-2016 <br>
+		 * @createdTime : 10:49:03 pm <br>
+		 * @methodName : setUserId <br>
+		 * @Description : <br>
+		 * @param userId
+		 *            the userId to set
+		 */
+		public void setUserId(String userId)
+			{
+				this.userId = userId;
+			}
+
 	}

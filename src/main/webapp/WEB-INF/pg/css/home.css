@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+.round-button {
+	width: 40px;
+	height: 40px;
+	line-height: 40px; /* adjust line height to align vertically*/
+	padding: 0;
+	border-radius: 50%;
+}
+
+.nav-pills a {
+	color: black;
+}
+
+/* .img-circle {
+	border-radius: 50%;
+} */
+
+.vertical-line {
+	width: 1px;
+	background-color: silver;
+	height: 100%;
+	float: inherit;
+	border: 1px ridge silver;
+	border-radius: 1px;
+}
+
+.transbox p {
+	margin: 5%;
+	font-weight: bold;
+	color: #000000;
+}
