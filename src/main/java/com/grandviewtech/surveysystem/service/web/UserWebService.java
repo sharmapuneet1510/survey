@@ -29,6 +29,7 @@ import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.apache.cxf.jaxrs.impl.ResponseBuilderImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import com.grandviewtech.surveysystem.entity.bo.Credential;
@@ -37,12 +38,14 @@ import com.grandviewtech.surveysystem.entity.bo.User;
 import com.grandviewtech.surveysystem.entity.bo.UserLoginInfo;
 import com.grandviewtech.surveysystem.service.business.CredentialService;
 import com.grandviewtech.surveysystem.service.business.UserService;
+import com.grandviewtech.surveysystem.service.utility.RedisSession;
 import com.grandviewtech.surveysystem.service.utility.SurveySessionHolder;
 import com.grandviewtech.surveysystem.service.utility.Util;
 import com.grandviewtech.surveysystem.service.utility.ValidationService;
 
 @Path("userWebService")
 @Service("userWebService")
+@PropertySource("classpath:application.properties")
 public class UserWebService
 	{
 
@@ -59,6 +62,9 @@ public class UserWebService
 
 		@Autowired
 		private UserService				userService;
+
+		@Autowired
+		private RedisSession			redisSession;
 
 		/**
 		 * <br>
@@ -99,6 +105,7 @@ public class UserWebService
 						SurveySession surveySession = new SurveySession();
 						surveySession.setUser(user);
 						SurveySessionHolder.putSession(sessionId, surveySession);
+						redisSession.put(sessionId, surveySession);
 						objects.put("clientId", sessionId);
 						responseBuilder.entity(objects);
 						responseBuilder.status(Status.OK);
@@ -211,6 +218,7 @@ public class UserWebService
 						surveySession.setCredential(credential);
 						surveySession.setUser(credential.getUser());
 						SurveySessionHolder.putSession(sessionId, surveySession);
+						redisSession.put(sessionId, surveySession);
 						objects.put("clientId", sessionId);
 						responseBuilder.entity(objects);
 						responseBuilder.status(Status.OK);
@@ -255,6 +263,7 @@ public class UserWebService
 
 				if (SurveySessionHolder.remove(sessionId) == true)
 					{
+						redisSession.deleteKey(sessionId);
 						responseBuilder.status(Status.OK);
 						return responseBuilder.build();
 					}

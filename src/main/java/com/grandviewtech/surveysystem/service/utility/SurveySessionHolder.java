@@ -9,9 +9,9 @@ import com.grandviewtech.surveysystem.entity.bo.User;
 
 public class SurveySessionHolder
 	{
-
+		
 		private static Map<String, SurveySession> sessionId_userSession = new LinkedHashMap<String, SurveySession>();
-
+		
 		// Map with Old Session
 		/**
 		 * <br>
@@ -35,9 +35,10 @@ public class SurveySessionHolder
 					{
 						return;
 					}
-				sessionId_userSession.put(sessionId, surveySession);
+					
+				//sessionId_userSession.put(sessionId, surveySession);
 			}
-
+			
 		/***
 		 * <br>
 		 *
@@ -62,14 +63,14 @@ public class SurveySessionHolder
 					}
 				return sessionId_userSession.get(sessionId);
 			}
-
+			
 		public static String getSessionId()
 			{
 				String sessionId = "sessionId_" + UUID.randomUUID().toString();//+ System.nanoTime();
 				sessionId = sessionId.replaceAll("-", "");
 				return sessionId;
 			}
-
+			
 		private static String validateSessionId(String sessionId)
 			{
 				if ((sessionId == null) || (sessionId.trim().length() == 0))
@@ -78,7 +79,7 @@ public class SurveySessionHolder
 					}
 				return sessionId.trim().toLowerCase();
 			}
-
+			
 		public static boolean isSessionValid(String sessionId)
 			{
 				sessionId = validateSessionId(sessionId);
@@ -88,7 +89,7 @@ public class SurveySessionHolder
 					}
 				return (sessionId_userSession.containsKey(sessionId));
 			}
-
+			
 		public synchronized static boolean remove(String sessionId)
 			{
 				sessionId = validateSessionId(sessionId);
@@ -99,7 +100,7 @@ public class SurveySessionHolder
 					}
 				return (false);
 			}
-
+			
 		public synchronized static void udpate(String sessionId, User user)
 			{
 				sessionId = validateSessionId(sessionId);
@@ -110,6 +111,6 @@ public class SurveySessionHolder
 						sessionId_userSession.remove(sessionId);
 						putSession(sessionId, surveySession);
 					}
-
+					
 			}
 	}

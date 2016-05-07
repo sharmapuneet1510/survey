@@ -15,6 +15,7 @@
  <script src="js/jquery.circliful.min.js"></script>
 -->
 <!-- style sheets -->
+<!-- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
 <link rel="stylesheet" href="pg/css/common.css">
 <link rel="stylesheet" href="pg/css/home.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -28,31 +29,25 @@
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> <strong>  Survenoma </strong></a>
+				<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> <strong> Survenoma </strong></a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+					<li class=""><a href="#">Dashboard <!-- <span class="sr-only ">(current)</span> --></a></li>
 					<li><a href="#">Link</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ng-click="getSettingDropDown()"><span class="glyphicon glyphicon-cog"> </span> Settings <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">Separated link</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">One more separated link</a></li>
+							<li class="{{x.className}}" ng-repeat="x in settings"><a class="{{x.className}}" href="{{x.url}}">{{x.id}}. {{x.labelName}}</a></li>
 						</ul></li>
 				</ul>
-				<form class="navbar-form navbar-left" role="search">
+				<!-- <form class="navbar-form navbar-left" role="search">
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="Search">
 					</div>
 					<button type="submit" class="btn btn-default">Submit</button>
-				</form>
+				</form> -->
 
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="http://localhost:8080/surveySystem/blog" class="toggle button"><span class="glyphicon glyphicon-bold"></span></a></li>
@@ -115,7 +110,9 @@
 							</div>
 							<div id="form2" style="width: 50%; float: right;">
 								<div>
-									<img class="img-circle img-responsive center-block" ng-src="{{user.profilePic}}">
+									<!-- <img class="img-circle img-responsive center-block" ng-src="{{user.profilePic}}"> -->
+									<img class="w3-circle img-responsive center-block" ng-src="{{user.profilePic}}">
+									<!-- <img ng-src="{{user.profilePic}}" ng-alt="{{user.username}" class="w3-left w3-circle w3-margin-right" style="width: 60px"> -->
 								</div>
 								<fieldset id="updateUserFormId2" enctype="multipart/form-data">
 									<div>
@@ -149,14 +146,39 @@
 		</div>
 	</div>
 	</nav>
-	<table class="table table-striped table-condensed">
-		<!-- On rows -->
-		<tr>
-			<td>Hi</td>
-		</tr>
-		<tr>
-			<td>Bye</td>
-		</tr>
-	</table>
+	<!-- <div ng-app="bodyApp">
+		<div class="w3-card-4 w3-margin" style="width: 50%" ng-controller="surveyCardController">
+			<header class="w3-container w3-light-grey">
+			<h3>Survey's</h3>
+			</header>
+			<div class="w3-container">
+				<table class="w3-table w3-striped w3-bordered w3-card-4" style="width: 100%">
+					<thead>
+						<tr class="w3-red">
+							<th>Survey Name</th>
+							<th>Create On</th>
+							<th>Created By</th>
+						</tr>
+					</thead>
+					<tr>
+						<td>Form 1</td>
+						<td>01-01-2016</td>
+						<td>sharmapuneet1510@gmail.com</td>
+					</tr>
+					<tr>
+						<td>Form 2</td>
+						<td>01-01-2016</td>
+						<td>payal.alag@zycus.com</td>
+					</tr>
+					<tr>
+						<td>Form 3</td>
+						<td>01-01-2016</td>
+						<td>payalalag28@gmail.com</td>
+					</tr>
+				</table>
+			</div>
+			<a href="http://localhost:8080/surveySystem/designer" class="w3-btn-block w3-dark-grey toggle button">Create New</a>
+		</div>
+	</div> -->
 </body>
 </html>

@@ -134,6 +134,14 @@ userLoginInfoController.controller('userLoginInfoController', function($scope, $
 						$scope.lastLogin = response.data.lastLogin;
 					});
 			};
+
+		$scope.getSettingDropDown = function()
+			{
+				$http.get("http://localhost:8080/surveySystem/ws/rest/uiWebService/getSettingsDropDown?clientId=" + clientId).then(function(response)
+					{
+						$scope.settings = response.data;
+					});
+			}
 		$scope.getUser = function()
 			{
 				$http.get("http://localhost:8080/surveySystem/ws/rest/userWebService/getUser?clientId=" + clientId).then(function(response)
@@ -185,4 +193,12 @@ $(document).ready(function()
 				$("#updateErrorId").hide();
 			});
 
+	});
+var surveyCardController = angular.module('bodyApp', [])
+surveyCardController.controller('surveyCardController', function($scope, $http)
+	{
+		$scope.createNewSurvey = function()
+			{
+				$location.url("http://localhost:8080/surveySystem/designer");
+			};
 	});

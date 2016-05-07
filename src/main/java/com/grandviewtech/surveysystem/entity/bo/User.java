@@ -9,14 +9,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Document(collection = "user")
+@Document(collection = "User")
 @XmlRootElement
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements Serializable
 	{
-
+		
 		private static final long	serialVersionUID	= -5670860671364444820L;
-
+														
 		@Id
 		private String				id;
 		private String				userId;
@@ -26,7 +26,7 @@ public class User implements Serializable
 		private String				middleName;
 		private String				lastName;
 		private String				profilePic;
-
+									
 		/**
 		 * <br>
 		 *
@@ -41,7 +41,7 @@ public class User implements Serializable
 			{
 				return id;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -57,7 +57,7 @@ public class User implements Serializable
 			{
 				this.id = id;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -72,7 +72,7 @@ public class User implements Serializable
 			{
 				return emailAddress;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -88,7 +88,7 @@ public class User implements Serializable
 			{
 				this.emailAddress = emailAddress;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -103,7 +103,7 @@ public class User implements Serializable
 			{
 				return password;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -119,7 +119,7 @@ public class User implements Serializable
 			{
 				this.password = password;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -134,7 +134,7 @@ public class User implements Serializable
 			{
 				return firstName;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -150,7 +150,7 @@ public class User implements Serializable
 			{
 				this.firstName = firstName;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -165,7 +165,7 @@ public class User implements Serializable
 			{
 				return middleName;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -181,7 +181,7 @@ public class User implements Serializable
 			{
 				this.middleName = middleName;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -196,7 +196,7 @@ public class User implements Serializable
 			{
 				return lastName;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -212,7 +212,7 @@ public class User implements Serializable
 			{
 				this.lastName = lastName;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -227,7 +227,7 @@ public class User implements Serializable
 			{
 				return profilePic;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -243,7 +243,7 @@ public class User implements Serializable
 			{
 				this.profilePic = profilePic;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -258,7 +258,7 @@ public class User implements Serializable
 			{
 				return userId;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -274,5 +274,5 @@ public class User implements Serializable
 			{
 				this.userId = userId;
 			}
-
+			
 	}

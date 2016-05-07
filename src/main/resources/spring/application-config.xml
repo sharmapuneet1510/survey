@@ -1,0 +1,52 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:websocket="http://www.springframework.org/schema/websocket" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:mongo="http://www.springframework.org/schema/data/mongo" xmlns:context="http://www.springframework.org/schema/context" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		 http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		 http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
+		<!-- Root Context: defines shared resources visible to all other web components -->
+		<import resource="classpath:META-INF/cxf/cxf.xml" />
+		<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+		<context:annotation-config />
+		<context:component-scan base-package="com.grandviewtech.surveysystem" />
+		<!-- Property Files -->
+		<context:property-placeholder location="classpath:application.properties,classpath:urls.properties" ignore-unresolvable="false" order="1" />
+		<!-- Mongo Configuration -->
+		<mongo:repositories base-package="com.grandviewtech.surveysystem.service.dao" />
+		<!-- Bean -->
+		<bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+		<bean id="userWebService" class="com.grandviewtech.surveysystem.service.web.UserWebService" />
+		<bean id="uiWebService" class="com.grandviewtech.surveysystem.service.web.UIWebService" />
+		<bean id="authenticationService" class="com.grandviewtech.surveysystem.service.web.AuthenticationService" />
+		<bean id="supplierWebService" class="com.grandviewtech.surveysystem.service.web.SupplierWebService" />
+		<!-- END -->
+		<!-- WebSocket Configuration -->
+		<!-- START -->
+		<!-- <bean id="notificationServer" class="com.v2tech.necto.plusconnect.configuration.WebSocketHandler"> <property name="mongoOperations" ref="mongoTemplate"></property> <property name="persistenceService" ref="persistenceService"></property> <property name="port" value="8899"></property> </bean> -->
+		<!-- END -->
+		<bean class="org.apache.cxf.interceptor.LoggingInInterceptor" id="loggingInInterceptor" />
+		<bean class="org.apache.cxf.interceptor.LoggingOutInterceptor" id="logOutInterceptor" />
+		<jaxrs:server id="surveySystemWebService" address="/rest/">
+				<jaxrs:serviceBeans>
+						<ref bean="userWebService" />
+						<ref bean="authenticationService" />
+						<ref bean="uiWebService" />
+						<ref bean="supplierWebService" />
+				</jaxrs:serviceBeans>
+				<jaxrs:providers>
+						<ref bean="jsonProvider" />
+				</jaxrs:providers>
+				<jaxrs:inInterceptors>
+						<ref bean="loggingInInterceptor" />
+				</jaxrs:inInterceptors>
+				<jaxrs:outInterceptors>
+						<ref bean="logOutInterceptor" />
+				</jaxrs:outInterceptors>
+				<jaxrs:properties>
+						<entry key="attachment-directory" value="${attachment-directory}" />
+						<entry key="attachment-memory-threshold" value="${attachment-memory-threshold}" />
+						<entry key="attachment-max-size" value="${attachment-max-size}" />
+				</jaxrs:properties>
+		</jaxrs:server>
+</beans>

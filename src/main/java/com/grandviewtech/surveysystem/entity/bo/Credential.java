@@ -8,11 +8,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Document(collection = "credential")
+@Document(collection = "Credential")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Credential implements Serializable
 	{
-
+		
 		/**
 		 * <br>
 		 *
@@ -30,7 +30,7 @@ public class Credential implements Serializable
 		private Date				lastLogin;
 		private boolean				isAccountLocked;
 		private int					numberOfInvalidAttempt	= 0;
-
+															
 		/**
 		 * <br>
 		 *
@@ -45,7 +45,7 @@ public class Credential implements Serializable
 			{
 				return username;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -61,7 +61,7 @@ public class Credential implements Serializable
 			{
 				this.username = username;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -76,7 +76,7 @@ public class Credential implements Serializable
 			{
 				return password;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -92,7 +92,7 @@ public class Credential implements Serializable
 			{
 				this.password = password;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -107,7 +107,7 @@ public class Credential implements Serializable
 			{
 				return user;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -123,7 +123,7 @@ public class Credential implements Serializable
 			{
 				this.user = user;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -138,7 +138,7 @@ public class Credential implements Serializable
 			{
 				return lastLogin;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -154,7 +154,7 @@ public class Credential implements Serializable
 			{
 				this.lastLogin = lastLogin;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -169,7 +169,7 @@ public class Credential implements Serializable
 			{
 				return isAccountLocked;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -185,7 +185,7 @@ public class Credential implements Serializable
 			{
 				this.isAccountLocked = isAccountLocked;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -200,7 +200,7 @@ public class Credential implements Serializable
 			{
 				return numberOfInvalidAttempt;
 			}
-
+			
 		/**
 		 * <br>
 		 *
@@ -216,5 +216,5 @@ public class Credential implements Serializable
 			{
 				this.numberOfInvalidAttempt = numberOfInvalidAttempt;
 			}
-
+			
 	}
